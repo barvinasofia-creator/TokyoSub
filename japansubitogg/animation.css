@@ -1,0 +1,249 @@
+/* 1. БОЛЬШОЕ ФОТО  */
+.wide-photo {
+    width: 100vw; 
+    height: auto; 
+    margin-top: 5vw; 
+    margin-bottom: 5vw; 
+    display: block;
+    object-fit: cover;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.transition-photo {
+  position: relative;
+}
+
+.wide-photo {
+  width: 100%;
+  display: block;
+}
+
+.photo-text {
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Onder', sans-serif;
+    font-size: clamp(10px, 2.0vw, 36px) !important;
+    color: black;
+    -webkit-text-stroke: 2px #8FFF00;
+    text-align: center;
+    width: 80%;
+    white-space: nowrap !important;
+}
+
+/* 2. КОНТЕЙНЕРЫ */
+.content-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.album-widget-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.frame-216 {
+    width: 1220px;
+    height: 307px;
+    background-color: #222222;
+    display: flex;
+    border: 1px solid #222222;
+    overflow: hidden;
+}
+
+/* 3. ЭЛЕМЕНТЫ ВНУТРИ ВИДЖЕТА */
+.main-display {
+    width: 306px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-display img {
+    width: 306px; 
+    aspect-ratio: 1 / 1; 
+    border-radius: 50% !important;
+    object-fit: cover; 
+    object-position: center; 
+    transition: transform 0.3s ease;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.main-display img.playing {
+animation: spin 5s linear infinite; 
+}
+
+#targetImg, #targetTitle, #targetDesc {
+transition: opacity 300ms ease-out, transform 300ms ease-out;
+opacity: 1;
+}
+
+/* Состояние исчезновения  */
+.fade-out {
+opacity: 0 !important;
+transform: scale(0.98); 
+}
+
+.info-side {
+flex-grow: 1;
+gap: 20px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.neon-plate {
+background-color: #222222;
+color: #F0157C;
+padding: 10px;
+display: flex;
+align-items: center;
+justify-content: left;
+min-height: 48px;
+}
+
+.title-anim, .desc-anim {
+transition: opacity 300ms ease-out;
+}
+
+/* 4. МИНИАТЮРЫ (ВАРИАНТЫ) */
+.variants-list {
+display: flex;
+justify-content: center; 
+gap: 19px; 
+margin-top: 10px;
+width: 100%; 
+}
+
+.variant-item {
+width: 110px;
+height: 110px;
+cursor: pointer;
+object-fit: cover;
+border: 3px solid transparent;
+transition: transform 200ms ease-out, border-color 200ms ease-out;
+}
+
+.variant-item:hover {
+    transform: scale(1.05);
+}
+#targetDesc b {
+    color: rgb(190, 246, 33);         
+}
+#targetImg {
+    cursor: pointer;
+    transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+#targetImg:active {
+    transform: scale(0.98); 
+}
+/* Настройка верхнего блока (заголовок трека) */
+#targetTitle {
+font-family: 'Inter', sans-serif;
+font-size: 24px;
+font-weight: 700;
+letter-spacing: 1px;
+text-align: left;
+width: 100%; 
+max-width: 500px;
+min-height: 60px; 
+margin-left: 6%;
+padding-left: 0%;
+}
+/* Настройка нижнего блока (описание) */
+#targetDesc {
+font-family: 'Inter', sans-serif;
+font-size: 16px;
+font-weight: 400;
+line-height: 1.4;
+text-align: left;
+padding-left: 6%;
+padding-right: 0%;  
+}
+
+/* 5. МОБИЛЬНАЯ ВЕРСИЯ */
+@media (max-width: 1220px) {
+    .frame-216 {
+        width: 95%;     
+        height: auto;    
+        flex-direction: column;
+        border: none;
+    }
+
+    .main-display {
+        width: 100%;    
+        height: auto;
+    }
+    
+    .main-display img {
+        height: auto;   
+    }
+
+    .info-side {
+        width: 100%;
+        gap: 15px;
+        padding: 20px 0;
+    }
+
+    .variants-list {
+        display: grid;  
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 10px;
+        width: 100%;
+    }
+
+    .variant-item {
+        width: 100%;     
+        height: auto;
+        aspect-ratio: 1 / 1; 
+    }
+
+    .photo-text {
+        white-space: normal !important; 
+        width: 90%;
+        line-height: 1.2;
+    }
+}
+
+/* Контейнер фото внутри виджета */
+@media (max-width: 1220px) {
+    .frame-216 {
+    width: 95% !important;
+    height: auto !important;
+    flex-direction: column !important; 
+    align-items: center !important;    
+    justify-content: center !important;
+    margin: 0 auto !important;        
+    padding: 10px 0 !important;
+    }
+
+    /* 2. Блок с главным фото */
+    .main-display {
+     width: 309px !important;
+    height: 307px !important;
+    display: block !important; 
+    margin-left: auto !important; 
+    margin-right: auto !important;
+    margin-bottom: 5px !important;
+    flex-shrink: 0 !important; 
+    }
+
+    /* 3. Само фото внутри блока */
+    #targetImg {
+    width: 309px !important;
+    height: 307px !important;
+    object-fit: cover;
+    }
+}

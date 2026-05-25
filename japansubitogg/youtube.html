@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гяру Субкультура</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body class="youtube-page">
+    <header>
+        <div class="nav-links">
+            <a href="index.html" class="nav-btn">Tokyo Sub</a>
+            <a href="galereyamenu.html" class="nav-btn">Галерея</a>
+            <a href="contacts.html" class="nav-btn">Контакты</a>
+        </div>
+        <a href="#" class="nav-btn login">Войти</a>
+    </header>
+    <main class="content-section youtube-section">
+        <h1 class="yt-hero-title">РАССКАЖЕМ ПРО <span class="neon-text">СУБКУЛЬТУРЫ</span></h1>
+        <div class="youtube-container">
+            <div class="yt-text-side">
+                <div class="learn-more-wrapper yt-btn-fix">
+                    <a href="#" class="learn-more yt-move-btn">
+                        <span class="learn-more-text">Перейти</span>
+                        <div class="learn-more-icon-wrap">
+                            <img src="images/Arrow.png" class="learn-more-icon icon-base" alt="">
+                            <img src="images/arrow_neon.png" class="learn-more-icon icon-active" alt="">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="yt-card-side">
+                <div class="glass-video-card">
+                    <img src="images/video-bg.jpg" class="yt-preview-img" alt="youtube preview">
+                        <div class="glass-overlay">
+                            <h2 class="glass-promo-text">ПОДПИШИСЬ<br>НА НАШ<br><span class="neon-text">РУТУБ КАНАЛ</span></h2>
+                                <div class="player-container">
+                                    <img src="images/player-ui.png" class="yt-player-img" alt="player controls">
+                                </div>
+                        </div>
+                </div>
+                <img src="images/yt-star-left.png" class="decor yt-star-1" alt="star">
+                <img src="images/yt-star-center.png" class="decor yt-star-3" alt="star">
+                <img src="images/yt-star-right.png" class="decor yt-star-2" alt="star">
+            </div>
+        </div>
+    </main>
+<footer class="main-footer">
+    <img src="images/line-green.png" class="footer-wave" alt="line">
+    <div class="footer-row">
+        <div class="footer-group">
+            <button class="footer-circle-btn heart-btn align-left">
+                <span class="icon-wrap">
+                    <img src="images/heart.png" alt="heart" class="icon-base">
+                    <img src="images/heart-pink.png" alt="heart" class="icon-active">
+                </span>
+            </button>
+            
+            <button class="footer-circle-btn share-btn align-left">
+                <span class="icon-wrap">
+                    <img src="images/share.png" alt="share" class="icon-base">
+        
+                    <div class="mini-icons-box">
+                        <img src="images/icon1.png" alt="tg" class="mini-icon">
+                        <img src="images/icon2.png" alt="email" class="mini-icon"> 
+                    </div>
+                </span>
+            </button>
+        </div>
+        
+        <div class="footer-group">
+            <a href="contacts.html" class="footer-circle-btn arrow-btn align-right">
+                <span class="icon-wrap">
+                    <img src="images/arrow-left.png" alt="next" class="icon-base">
+                    <img src="images/arrow-left-green.png" alt="next" class="icon-active">
+                </span>
+            </a>
+        </div>
+    </div>
+</footer>
+<script>
+    const toggleButtons = document.querySelectorAll('.heart-btn, .share-btn');
+
+    toggleButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    });
+</script>
+</body>
+</html>

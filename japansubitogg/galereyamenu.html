@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гяру Субкультура</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body class="gal-men-page">
+    <header>
+        <div class="nav-links">
+            <a href="index.html" class="nav-btn">Tokyo Sub</a>
+            <div class="gal">
+                <a href="#" class="nav-btn">Галерея</a>
+            </div>
+            <a href="contacts.html" class="nav-btn">Контакты</a>
+        </div>
+        <a href="#" class="nav-btn login">Войти</a>
+    </header>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span class="accent-font">ГАЛЕРЕЯ</span>
+            <span class="main-title">ГАЛЕРЕЯ</span>
+            <span class="accent-font">ГАЛЕРЕЯ</span>
+        </div>
+    </div>
+    <div class="stars-anchor">
+        <img src="images/star-gal-right-small.png" class="decor star-gal-rigsmall" alt="star">
+        <img src="images/star-gal-left-small.png" class="decor star-gal-lefsmall" alt="star">
+        <img src="images/star-gal-left-big.png" class="decor star-gal-lefbig" alt="star">
+        <img src="images/star-gal-right-big.png" class="decor star-gal-rigbig" alt="star">
+    </div>
+        <img src="images/star-gal-right.png" class="decor star-gal-1" alt="star">
+        <img src="images/star-gal-left.png" class="decor star-gal-2" alt="star">
+    <main class="content-section gal-container">
+        <div class="gallery-grid">
+        <a href="gyaru.html" class="gallery-item">
+            <div class="gallery-image-container">
+                <img src="images/gyaru-gal.jpg" alt="Gyaru" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span class="gallery-text">ГЯРУ</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="visualkey.html" class="gallery-item">
+            <div class="gallery-image-container">
+                <img src="images/visual-kei-gal.jpg" alt="Visual Kei" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span class="gallery-text">ВИЗУАЛ КЕЙ</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="decora.html" class="gallery-item">
+            <div class="gallery-image-container">
+                <img src="images/decora-gal.jpg" alt="Decora" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span class="gallery-text">ДЕКОРА</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="lolita.html" class="gallery-item">
+            <div class="gallery-image-container">
+                <img src="images/lolita-gal.jpg" alt="Lolita" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span class="gallery-text">ЛОЛИТА</span>
+                </div>
+            </div>
+        </a>
+    </div>
+    </main>
+<footer class="main-footer">
+    <img src="images/line-green.png" class="footer-wave" alt="line">
+    <div class="footer-row">
+        <div class="footer-group">
+            <button class="footer-circle-btn heart-btn align-left">
+                <span class="icon-wrap">
+                    <img src="images/heart.png" alt="heart" class="icon-base">
+                    <img src="images/heart-pink.png" alt="heart" class="icon-active">
+                </span>
+            </button>
+            
+            <button class="footer-circle-btn share-btn align-left">
+                <span class="icon-wrap">
+                    <img src="images/share.png" alt="share" class="icon-base">
+        
+                    <div class="mini-icons-box">
+                        <img src="images/icon1.png" alt="tg" class="mini-icon">
+                        <img src="images/icon2.png" alt="email" class="mini-icon"> 
+                    </div>
+                </span>
+            </button>
+        </div>
+        
+        <div class="footer-group">
+            <a href="decora2.html" class="footer-circle-btn arrow-btn align-left">
+                <span class="icon-wrap">
+                    <img src="images/arrow-left.png" alt="prev" class="icon-base">
+                    <img src="images/arrow-left-green.png" alt="prev" class="icon-active">
+                </span>
+            </a>
+            
+            <a href="gyaru.html" class="footer-circle-btn arrow-btn align-right">
+                <span class="icon-wrap">
+                    <img src="images/arrow-right.png" alt="next" class="icon-base">
+                    <img src="images/arrow-right-green.png" alt="next" class="icon-active">
+                </span>
+            </a>
+        </div>
+    </div>
+</footer>
+<script>
+    const toggleButtons = document.querySelectorAll('.heart-btn, .share-btn');
+
+    toggleButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    });
+</script>
+</body>
+</html>

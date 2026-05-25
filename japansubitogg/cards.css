@@ -1,0 +1,146 @@
+
+@font-face {
+  font-family: 'Onder';
+  src: url('fonts/ONDER-REGULAR.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DSJapanCyr'; 
+  src: url('fonts/Dsjapancyr.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  max-width: 1200px; 
+  margin: 0 auto;   
+  gap: 25px;
+  padding: 60px 20px;
+  position: relative; 
+  z-index: 10;
+}
+
+/* Карточка */
+.card {
+  background: #ff2d85;
+  border-radius: 35px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  height: 180px; 
+  width: 100%;   
+  display: flex;
+  flex-direction: column;
+  position: relative; 
+  transition: height .5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Верх (Розовая плашка) */
+.card-top {
+  padding: 20px 20px;
+  background: #ff2d85;
+  z-index: 5;
+  position: relative;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 140px; 
+}
+
+.text-top {
+  font-family: 'Onder', sans-serif;
+  color: #222;
+  font-size: 1.2rem;
+  display: block;
+}
+
+.text-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #F0157C;
+  -webkit-text-stroke: 1.5px #BBFF00;
+  font-family: 'Dsjapancyr';
+  font-size: 1.7rem;
+  display: block;
+  line-height: 1;
+  margin-top: 5px;
+}
+
+/* Картинка */
+.card-image {
+  flex:  0 auto; 
+  height: px;  
+  margin-top: -100px; 
+  z-index: 1;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  padding-top: 35px;
+}
+
+/* Подпись (Выезжает снизу) */
+.card-bottom {
+  /* Фикс размера */
+  box-sizing: border-box; 
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #F0157C;
+  font-size: 13px;
+  line-height: 1.4;
+  font-family: 'Inter', sans-serif;
+  color: white; 
+
+  /* Анимация */
+  overflow: hidden;
+  word-wrap: break-word;
+  transform: translateY(100%);
+  transition: transform .4s ease;
+  z-index: 10;
+}
+
+/* Hover (Анимация) */
+.card:hover {
+  height: 550px; 
+}
+
+.card:hover .card-bottom {
+  transform: translateY(0); 
+}
+
+/* Адаптив */
+@media(max-width: 600px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .card {
+    max-width: 320px;
+  }
+  
+  .card:hover {
+    height: 480px;
+  }
+}

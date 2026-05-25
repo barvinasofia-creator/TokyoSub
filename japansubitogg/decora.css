@@ -1,0 +1,537 @@
+/*подвал*/
+.nav-btn.active {
+    background-color: rgb(240, 21, 124); 
+    color: rgb(0, 0, 0); 
+}
+/*подвал*/
+.main-footer {
+    margin-top: 50px;
+    padding-bottom: 50px;
+    padding: 40px 0px; 
+}
+.footer-wave {
+    display: block;
+    width: 100vw !important; 
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0;
+    margin-bottom: 40px;
+    max-width: none !important;
+    min-width: 100vw;
+    height: auto;
+    object-fit: cover;
+}
+.footer-row {
+    width: 100%;
+    max-width: 1000px; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 10px;
+}
+.footer-group {
+    display: flex;
+    gap: 15px; 
+}
+/*стили кнопок*/
+.footer-circle-btn {
+    background: transparent;
+    border: 1.5px solid var(--light-btn);
+    border-radius: 50px;
+    height: 34px;
+    width: 100px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+    position: relative;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.align-left { justify-content: flex-start; }
+.align-right { justify-content: flex-end; }
+.icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    position: relative;
+}
+.footer-circle-btn img {
+    height: 16px;
+    width: auto;
+    transition: opacity 0.2s ease;
+}
+/*иконки*/
+.icon-base { opacity: 1; }
+.icon-active { 
+    opacity: 0; 
+    position: absolute; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+/*состояние active-клик hover-стрелки*/
+/*сердце/поделиться (после клика)*/
+.heart-btn.active { border-color: var(--pink); }
+.share-btn.active { border-color: var(--neon-green); }
+.heart-btn.active .icon-base, 
+.share-btn.active .icon-base { opacity: 0; }
+.heart-btn.active .icon-active { opacity: 1; }
+/*стрелочки при наведении*/
+.arrow-btn:hover { border-color: var(--neon-green); }
+.arrow-btn:hover .icon-base { opacity: 0; }
+.arrow-btn:hover .icon-active { opacity: 1; }
+/*поделиться*/
+.share-btn .icon-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.share-btn .icon-base {
+    position: absolute;
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+/*контейнер для зеленых иконок*/
+.share-btn .mini-icons-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+/*анимка клик*/
+.share-btn.active .icon-base {
+    opacity: 0 !important;
+}
+.share-btn.active .mini-icons-box {
+    opacity: 1;
+    pointer-events: auto;
+}
+/*мелкие иконки внутри*/
+.mini-icon {
+    height: 16px !important;
+    width: auto !important;
+    position: relative !important;
+    margin: 0 !important;
+    transform: none !important;
+}
+
+@media (max-width: 768px) {
+    .main-footer{
+        margin-top: 0;
+    }
+    .footer-wave {
+        width: calc(100% + 50%) !important;
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+        max-width: none !important;
+    }
+    @media screen {
+    .footer-row {
+        max-width: 1000px; 
+    }
+}
+.main-footer {
+    margin-top: 50px;
+    padding: 40px 0px;
+    width: 100%;
+}
+    .footer-group {
+        display: flex !important;
+        gap: 10px !important;
+        width: auto !important;
+    }
+    .footer-circle-btn {
+        width: 75px !important;
+        height: 35px !important;
+    }
+}
+
+html {
+    scrollbar-gutter: stable;
+}
+@font-face {
+    font-family: 'Dsjapancyr'; 
+    src: url('fonts/Dsjapancyr.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OnderRegular'; 
+    src: url('fonts/ONDER-REGULAR.TTF') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+ /*шапка*/
+
+:root {
+    --bg-color: rgb(34, 34, 34);
+    --neon-green: rgb(190, 246, 33);
+    --pink: rgb(240, 21, 124);
+    --light-btn: rgb(255, 253, 236);
+    --container-width: 1000px; 
+}
+
+/* 1. Базовая шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+/* Контейнер для левых кнопок */
+.nav-links {
+    display: flex;
+    gap: 15px; 
+    flex-direction: row !important;
+}
+
+.nav-btn {
+    background-color: var(--light-btn);
+    color: var(--bg-color);
+    text-decoration: none;
+    padding: 8px 30px; 
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: 0.3s;
+    /* КРИТИЧНО: */
+    width: auto !important; 
+    min-width: 0 !important; 
+    flex: none !important; 
+}
+
+/* 2. АДАПТАЦИЯ */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0 !important;
+        justify-content: space-between !important; 
+    }
+
+    .nav-links {
+        gap: 8px !important; 
+    }
+
+    .nav-btn {
+        padding: 6px 12px !important; 
+        font-size: 10px !important; 
+        border-radius: 30px !important;
+    }
+}
+
+:root {
+ --bg-color: #1a1a1a;
+--pink: rgb(240, 21, 124);
+--btn-gray: #e8e8e8;
+--active-lime: rgb(190, 246, 33);
+}
+
+body {
+background-color: var(--bg-color);
+margin: 0;
+font-family: sans-serif;
+color: white;
+overflow-x: hidden; 
+}
+
+
+.header-banner {
+background-color: var(--active-lime);
+padding: 20px 40px; 
+width: auto;
+margin-left: -40px !important;
+margin-right: -40px !important;   
+box-sizing: border-box;
+overflow: hidden;
+display: flex;
+justify-content: center;
+margin-bottom: 60px;
+}
+
+/* Контейнер внутри плашки */
+.banner-content {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;            
+    max-width: 1300px;    
+    margin: 0 auto;
+    gap: 218px;             
+}
+
+/* Основной заголовок  */
+.main-title {
+font-family: 'Onder', sans-serif; 
+    font-size: 26px;
+    color: var(--bg-color); 
+    line-height: 1.7;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Декоративный текст по бокам */
+.small-text {
+font-family: 'DSJapanCyr', sans-serif;
+    font-size: 22px;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--pink); 
+    letter-spacing: -1.5px;
+    margin: 0;
+}
+
+/* Выравнивание левого и правого текста */
+.banner-content .small-text:first-child {
+    text-align: left;
+}
+.banner-content .small-text:last-child {
+    text-align: right;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .header-banner {
+        padding: 10px 0; 
+    }
+    .banner-content {
+        gap: 15px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .small-text {
+        -webkit-text-stroke: 1px var(--active-lime); 
+    }
+}
+   
+   body {
+margin: 0 auto;
+background-color: #222222; 
+color: #ffffff; 
+}
+
+/* Состояние всех картинок по умолчанию */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.1s ease; 
+}
+
+/* Состояние при наведении (hover) */
+.gallery-item:hover img {
+filter: grayscale(0%);
+}
+
+/* Контейнер всей галереи */
+.gallery-container {
+    display: grid;
+    width: 70%;            
+    max-width: 1200px;     
+    margin: 0 auto;        
+    gap: 2px;             
+    height: auto; 
+    aspect-ratio: 1300 / 763; 
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+        "it1 it2 it3 it4 it4 it4"
+        "it5 it5 it5 it6 it6 it6"
+        "it7 it8 it9 it11 it10 it10";
+}
+
+/* Общие стили для айтемов */
+.gallery-item {
+    overflow: hidden;
+    display: flex;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+.item-1  { grid-area: it1; }
+.item-2  { grid-area: it2; }
+.item-3  { grid-area: it3; }
+.item-4  { grid-area: it4; }
+.item-5  { grid-area: it5; }
+.item-6  { grid-area: it6; }
+.item-7  { grid-area: it7; }
+/* Длинные горизонтальные картинки (примерно 644x242) */
+.item-8  { grid-area: it8; }
+.item-9  { grid-area: it9; }
+.item-10 { grid-area: it11; }
+/* Последняя картинка (среднего размера 429x262) */
+.item-11 { grid-area: it10; }
+
+.more-btn {
+    width: 310px;
+    height: 37px;
+    background-color: #F0157C;
+    border-radius: 47px;
+    border: none;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease; 
+}
+
+/* Эффект при наведении */
+.more-btn:hover {
+    background-color: #ff1a8c;
+    box-shadow: 0 0 20px rgba(240, 21, 124, 0.6); 
+    transform: translateY(-2px); 
+    color: black; 
+}
+
+/* Эффект при нажатии */
+.more-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 0 10px rgba(240, 21, 124, 0.4);
+}
+
+.more-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px; 
+    margin-bottom: 80px; 
+}
+
+/* 1. Главный контейнер звезд */
+.stars-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden; 
+    z-index: 1; 
+    pointer-events: none;
+}
+
+.st {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.stars-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: visible; 
+    min-height: 100%; 
+    z-index: 99999;
+    pointer-events: none;
+}
+
+/* Базовый стиль для каждой звезды */
+.st {
+    position: absolute;
+    display: block;
+    z-index: 9999;
+    pointer-events: none;
+    transition: opacity 0.3s ease; 
+}
+
+/* ЛЕВАЯ СТОРОНА  */
+.s1 { 
+    top: 260px; left: 60%; margin-left: -850px; 
+    width: 120px; 
+    transform: rotate(-15deg); 
+}
+.s2 { 
+    top: 680px; left: 63%; margin-left: -950px; 
+    width: 100px; 
+}
+.s7 { 
+    top: 490px; left: 62%; margin-left: -920px; 
+    width: 170px; 
+}
+
+/*  ПРАВАЯ СТОРОНА  */
+.s3 { 
+    top: 200px; left: 42%; margin-left: 680px; 
+    width: 140px; 
+    transform: rotate(-60deg); 
+}
+.s4 { 
+    top: 680px; left: 38%; margin-left: 800px; 
+    width: 150px; 
+}
+.s8 { 
+    top: 480px; left: 35%; margin-left: 750px; 
+    width: 210px; 
+    transform: rotate(80deg); 
+}
+
+
+/*  ОСТАЛЬНЫЕ  */
+.s5 { top: 100px; left: 55%; margin-left: -400px; width: 120px; }
+.s6 { top: 90px; left: 47%; margin-left: 250px; width: 110px; }
+.s10 { top: 100px; left: 42%; margin-left: 700px; width: 80px; }
+
+@media (max-width: 1400px) {
+    .st {
+        transform: scale(0.7); 
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        flex-direction: column; 
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .nav-links {
+        justify-content: center; 
+    }
+
+    .nav-btn.login {
+        min-width: 120px; 
+    }
+}
+
+header .nav-btn:hover {
+    background-color: rgb(240, 21, 124) !important; 
+    color: rgb(0, 0, 0) !important;               
+    border-color: rgb(240, 21, 124) !important;   
+}

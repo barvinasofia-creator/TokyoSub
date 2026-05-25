@@ -1,0 +1,576 @@
+
+:root {
+    --container-width: 1000px;
+}
+
+body {
+    margin: 0;
+    padding: 0 40px; 
+    font-family: 'Inter', sans-serif;
+}
+
+.nav-btn.active {
+    background-color: rgb(240, 21, 124); 
+    color: rgb(0, 0, 0); 
+}
+/*подвал*/
+.main-footer {
+    margin-top: 50px;
+    padding-bottom: 50px;
+    padding: 40px 0px; 
+}
+.footer-wave {
+    display: block;
+    width: 100vw !important; 
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); 
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0;
+    margin-bottom: 40px;
+    max-width: none !important;
+    min-width: 100vw;
+    height: auto;
+    object-fit: cover;
+}
+.footer-row {
+    width: 100%;
+    max-width: 1000px; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 10px;
+}
+.footer-group {
+    display: flex;
+    gap: 15px;
+}
+/*стили кнопок*/
+.footer-circle-btn {
+    background: transparent;
+    border: 1.5px solid var(--light-btn);
+    border-radius: 50px;
+    height: 34px;
+    width: 100px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+    position: relative;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.align-left { justify-content: flex-start; }
+.align-right { justify-content: flex-end; }
+.icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    position: relative;
+}
+.footer-circle-btn img {
+    height: 16px;
+    width: auto;
+    transition: opacity 0.2s ease;
+}
+/*иконки*/
+.icon-base { opacity: 1; }
+.icon-active { 
+    opacity: 0; 
+    position: absolute; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+/*состояние active-клик hover-стрелки*/
+/*сердце/поделиться (после клика)*/
+.heart-btn.active { border-color: var(--pink); }
+.share-btn.active { border-color: var(--neon-green); }
+.heart-btn.active .icon-base, 
+.share-btn.active .icon-base { opacity: 0; }
+.heart-btn.active .icon-active { opacity: 1; }
+/*стрелочки при наведении*/
+.arrow-btn:hover { border-color: var(--neon-green); }
+.arrow-btn:hover .icon-base { opacity: 0; }
+.arrow-btn:hover .icon-active { opacity: 1; }
+
+/*поделиться*/
+.share-btn .icon-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.share-btn .icon-base {
+    position: absolute;
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+/*контейнер для зеленых иконок*/
+.share-btn .mini-icons-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+/*анимка клик*/
+.share-btn.active .icon-base {
+    opacity: 0 !important;
+}
+.share-btn.active .mini-icons-box {
+    opacity: 1;
+    pointer-events: auto;
+}
+/*мелкие иконки внутри*/
+.mini-icon {
+    height: 16px !important;
+    width: auto !important;
+    position: relative !important;
+    margin: 0 !important;
+    transform: none !important;
+}
+
+@media (max-width: 768px) {
+    .main-footer{
+        margin-top: 0;
+    }
+    .footer-wave {
+        width: calc(100% + 50%) !important;
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+        max-width: none !important;
+    }
+    @media screen {
+    .footer-row {
+        max-width: 1000px; 
+    }
+}
+
+
+.main-footer {
+    margin-top: 50px;
+    padding: 40px 0px;
+    width: 100%;
+}
+    .footer-group {
+        display: flex !important;
+        gap: 10px !important;
+        width: auto !important;
+    }
+    .footer-circle-btn {
+        width: 75px !important;
+        height: 35px !important;
+    }
+}
+
+html {
+    scrollbar-gutter: stable;
+}
+@font-face {
+    font-family: 'Dsjapancyr'; 
+    src: url('fonts/Dsjapancyr.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OnderRegular'; 
+    src: url('fonts/ONDER-REGULAR.TTF') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*шапка*/
+
+:root {
+    --bg-color: rgb(34, 34, 34);
+    --neon-green: rgb(190, 246, 33);
+    --pink: rgb(240, 21, 124);
+    --light-btn: rgb(255, 253, 236);
+    --container-width: 1000px; /* Фиксируем как в оригинале */
+}
+
+/* 1. Базовая шапка  */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+/* Контейнер для левых кнопок */
+.nav-links {
+    display: flex;
+    gap: 15px; 
+    flex-direction: row !important;
+}
+
+.nav-btn {
+    background-color: var(--light-btn);
+    color: var(--bg-color);
+    text-decoration: none;
+    padding: 8px 30px; 
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: 0.3s;
+    /* КРИТИЧНО: */
+    width: auto !important; 
+    min-width: 0 !important;
+    flex: none !important; 
+}
+
+/* 2. АДАПТАЦИЯ  */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0 !important;
+        justify-content: space-between !important; 
+    }
+
+    .nav-links {
+        gap: 8px !important; 
+    }
+
+    .nav-btn {
+        padding: 6px 12px !important; 
+        font-size: 10px !important; 
+        border-radius: 30px !important;
+    }
+}
+
+/* 1. Верхняя розовая плашка */
+
+:root {
+    --bg-color: #222222;
+    --pink: rgb(240, 21, 124);
+    --btn-gray: #e8e8e8;
+    --active-lime: #b4e637;
+}
+
+body {
+    background-color: var(--bg-color);
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
+    overflow-x: hidden; 
+}
+
+
+.header-banner {
+    background-color: var(--pink); 
+    padding: 20px 40px; 
+    width: auto;
+    margin-left: -40px !important;
+    margin-right: -40px !important;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+/* Контейнер внутри плашки */
+.banner-content {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;            
+    max-width: 1300px;    
+    margin: 0 auto;
+    gap: 170px;             
+}
+
+/* Основной заголовок */
+.main-title {
+font-family: 'Onder', sans-serif; 
+    font-size: 26px;
+    color: var(--bg-color); 
+    line-height: 1.7;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Декоративный текст по бокам */
+.small-text {
+font-family: 'DSJapanCyr', sans-serif;
+    font-size: 22px;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--active-lime); 
+    letter-spacing: -1.5px;
+    margin: 0;
+}
+
+/* Выравнивание левого и правого текста */
+.banner-content .small-text:first-child {
+    text-align: left;
+}
+.banner-content .small-text:last-child {
+    text-align: right;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .header-banner {
+        padding: 10px 0; 
+    }
+    .banner-content {
+        gap: 15px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .small-text {
+        -webkit-text-stroke: 1px var(--active-lime); 
+    }
+}
+
+/*  Блок с текстом и активной кнопкой */
+.cta-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.contact-image {
+    width: 150px;
+    max-width: 80%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.contact-image:hover {
+    transform: scale(1.05);
+}
+
+.promo-text {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.lime-text {
+    color: var(--neon-green);
+}
+
+.active-button {
+    background-color: var(--neon-green);
+    color: black;
+    text-decoration: none;
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.active-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(180, 230, 55, 0.3);
+}
+/* Специально для маленьких экранов */
+@media (max-width: 768px) {
+    .cta-section {
+        flex-direction: column; 
+        gap: 20px;
+    }
+    
+    .active-button {
+        font-size: 20px;
+        padding: 15px 30px;
+        width: fit-content; 
+    }
+}
+
+/* 7. СЕТКА КОНТАКТОВ */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 540px));
+    gap: 30px;
+    justify-content: center;
+    width: 90%;
+    max-width: 1320px;
+    margin: 60px auto 100px;
+}
+
+.btn-contact {
+    display: flex;         
+    align-items: center;   
+    justify-content: center;
+    gap: 15px;             
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    color: black;
+    border-radius: 75px;
+    font-size: clamp(16px, 2vw, 22px); 
+    text-decoration: none;
+    transition: 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-icon {
+    width: 35px;           
+    height: 28px;
+    object-fit: contain;
+}
+
+/* Белая иконка при наведении на розовую кнопку */
+.btn-contact:hover .btn-icon {
+    filter: brightness(0) invert(1);
+}
+
+.hover-pos:hover {
+    background-color: var(--pink) !important;
+    color: white;
+    transform: rotate(-2deg);
+}
+
+.hover-neg:hover {
+    background-color: var(--pink) !important;
+    color: white;
+    transform: rotate(2deg);
+}
+
+
+/* 8. АДАПТИВНОСТЬ  */
+
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .btn-contact {
+        height: 60px; 
+        gap: 10px;   
+    }
+
+    .btn-icon {
+        width: 25px; 
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-contact {
+        height: 50px; 
+        font-size: 14px; 
+        padding: 0 15px;
+    }
+    
+    .buttons-grid {
+        gap: 15px; 
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        flex-direction: column; 
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .nav-links {
+        justify-content: center; 
+    }
+
+    .nav-btn.login {
+        min-width: 120px; 
+    }
+}
+
+/* Базовый слой для звезд */
+body {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden; 
+}
+
+.st {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    z-index: 1; 
+    max-width: 10vw; 
+}
+
+@media (max-width: 1200px) {
+    .st { 
+        transform: scale(0.6); 
+    }
+}
+
+
+.sc1 { 
+    top: 500px; 
+    left: 60%; 
+    margin-left: -850px; 
+    width: 100px; 
+    transform: rotate(-70deg);
+}
+.sc2 { 
+    top: 780px; 
+    left: 55%; 
+    margin-left: -780px; 
+    width: 120px; 
+    transform: rotate(70deg); 
+}
+
+.sc4 { 
+    top: 850px; 
+    left: 42%; 
+    margin-left: 720px; 
+    width: 100px;
+    transform: rotate(deg);
+}
+
+.sc3 { 
+    top: 500px; 
+    left: 45%; 
+    margin-left: 650px; 
+    width: 140px; 
+    transform: rotate(0deg); 
+}
+
+
+@media (max-width: 1350px) {
+    .st { display: none; }
+}
+header .nav-btn:hover {
+    background-color: rgb(240, 21, 124) !important; 
+    color: rgb(0, 0, 0) !important;             
+    border-color: rgb(240, 21, 124) !important;   
+}

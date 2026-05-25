@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="visualkey.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+
+<header>
+        <div class="nav-links">
+            <a href="index.html" class="nav-btn">Tokyo Sub</a>
+            <a href="galereyamenu.html" class="nav-btn">Галерея</a>
+            <a href="contacts.html" class="nav-btn">Контакты</a>
+        </div>
+        <a href="#" class="nav-btn login">Войти</a>
+    </header> 
+<div class="header-banner">
+    <div class="banner-content">
+        <span class="small-text">ГАЛЕРЕЯ</span>
+        <h1 class="main-title">ГАЛЕРЕЯ</h1>
+        <span class="small-text">ГАЛЕРЕЯ</span>
+    </div>
+</div>
+    <main>
+
+  <div class="gallery-container">
+        <div class="gallery-item item-1">
+            <img src="photo_gyaru/VK_1.jpg" alt="Фото 1">
+        </div>
+        
+        <div class="gallery-item item-2">
+            <img src="photo_gyaru/VK_2.jpg" alt="Фото 2">
+        </div>
+
+        <div class="gallery-item item-3">
+            <img src="photo_gyaru/VK_3.jpg" alt="Фото 3">
+        </div>
+
+        <div class="gallery-item item-4">
+            <img src="photo_gyaru/VK_4.jpg" alt="Фото 4">
+        </div>
+        
+        <div class="gallery-item item-5">
+            <img src="photo_gyaru/VK_5.jpg" alt="Фото 5">
+        </div>
+
+        <div class="gallery-item item-6">
+            <img src="photo_gyaru/VK_6.jpg" alt="Фото 6">
+        </div>
+
+        <div class="gallery-item item-7">
+            <img src="photo_gyaru/VK_7.jpg" alt="Фото 7">
+        </div>
+
+        <div class="gallery-item item-8">
+            <img src="photo_gyaru/VK_8.jpg" alt="Фото 8">
+        </div>
+
+        <div class="gallery-item item-9">
+            <img src="photo_gyaru/VK_9.jpg" alt="Фото 9">
+        </div>
+        
+        <div class="gallery-item item-10">
+            <img src="photo_gyaru/VK_10.jpg" alt="Фото 10">
+        </div>
+
+        <div class="gallery-item item-11">
+            <img src="photo_gyaru/VK_11.jpg" alt="Фото 11">
+        </div>
+
+
+        </div>
+        </div> 
+
+<div class="more-btn-wrapper">
+    <a href="youtube.html" class="more-btn">ЕЩЕ</a>
+</div>
+    </main>
+
+<div class="stars-layer">
+    <img src="star/starsubgyaru1.svg" class="st s1" alt="star">
+    <img src="star/starsubgyaru2.svg" class="st s2" alt="star">
+    <img src="star/starsubgyaru3.svg" class="st s3" alt="star">
+    <img src="star/starsubgyaru4.svg" class="st s4" alt="star">
+    <img src="star/starsubgyaru5.svg" class="st s5" alt="star">
+    <img src="star/starsubgyaru6.svg" class="st s6" alt="star">
+    <img src="star/starsubgyaru7.svg" class="st s7" alt="star">
+    <img src="star/starsubgyaru8.svg" class="st s8" alt="star">
+
+</div>
+
+    </div>
+</body>
+<footer class="main-footer">
+    <img src="images/line-green.png" class="footer-wave" alt="line">
+    <div class="footer-row">
+        <div class="footer-group">
+            <button class="footer-circle-btn heart-btn align-left">
+                <span class="icon-wrap">
+                    <img src="images/heart.png" alt="heart" class="icon-base">
+                    <img src="images/heart-pink.png" alt="heart" class="icon-active">
+                </span>
+            </button>
+            
+            <button class="footer-circle-btn share-btn align-left">
+                <span class="icon-wrap">
+                    <img src="images/share.png" alt="share" class="icon-base">
+        
+                    <div class="mini-icons-box">
+                        <img src="images/icon1.png" alt="tg" class="mini-icon">
+                        <img src="images/icon2.png" alt="email" class="mini-icon"> 
+                    </div>
+                </span>
+            </button>
+        </div>
+        
+        <div class="footer-group">
+             <a href="gyaru.html" class="footer-circle-btn arrow-btn align-left"> 
+                <span class="icon-wrap">
+                    <img src="images/arrow-left.png" alt="prev" class="icon-base">
+                    <img src="images/arrow-left-green.png" alt="prev" class="icon-active">
+                </span>
+            </button>
+            
+            <a href="lolita.html" class="footer-circle-btn arrow-btn align-right">
+                <span class="icon-wrap">
+                    <img src="images/arrow-right.png" alt="next" class="icon-base">
+                    <img src="images/arrow-right-green.png" alt="next" class="icon-active">
+                </span>
+            </a>
+        </div>
+    </div>
+</footer>
+<script>
+    const toggleButtons = document.querySelectorAll('.heart-btn, .share-btn');
+
+    toggleButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    });
+</script>
+</body>
+
+
+</html>
