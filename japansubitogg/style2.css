@@ -3,7 +3,14 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @font-face { font-family: 'Onder'; src: url('fonts/ONDER-REGULAR.ttf'); }
-@font-face { font-family: 'DSJapanCyr'; src: url('fonts/DS_Japan.ttf'); }
+ @font-face {
+    font-family: 'Dsjapancyr'; 
+    src: local('Dsjapancyr'), local('Dsjapancyr'),
+         url('fonts/Dsjapancyr.woff') format('woff'),
+         url('fonts/Dsjapancyr.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
 :root {
     --bg-color: rgb(34, 34, 34);
     --neon-green: rgb(190, 246, 33);

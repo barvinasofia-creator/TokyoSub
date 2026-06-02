@@ -7,10 +7,12 @@
 }
 
 @font-face {
-  font-family: 'DSJapanCyr'; 
-  src: url('fonts/Dsjapancyr.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'DsjapanCyr'; 
+    src: local('Dsjapancyr'), local('DsjapanCyr'),
+         url('fonts/Dsjapancyr.woff') format('woff'),
+         url('fonts/Dsjapancyr.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
 }
 
 .cards-wrapper {

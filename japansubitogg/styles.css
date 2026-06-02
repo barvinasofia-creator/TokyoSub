@@ -3,16 +3,13 @@ html {
 }
 @font-face {
     font-family: 'Dsjapancyr'; 
-    src: url('fonts/Dsjapancyr.ttf') format('truetype'); 
+    src: local('Dsjapancyr'), local('Dsjapancyr'),
+         url('fonts/dsjapancyr.woff') format('woff'),
+         url('fonts/Dsjapancyr.ttf') format('truetype'); 
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'OnderRegular';
-    src: url('fonts/ONDER-REGULAR.TTF') format('truetype'); 
-    font-weight: normal;
-    font-style: normal;
-}
+@font-face { font-family: 'Onder'; src: url('fonts/ONDER-REGULAR.ttf'); }
 
 /*шапка*/
 body{
@@ -75,26 +72,45 @@ header {
 }
 
 /* 2. АДАПТАЦИЯ */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     header {
-        padding: 15px 0 !important;
+        flex-direction: row !important;
+        gap: 0 !important;
+        padding: 20px 15px !important; 
+    }
+}
+
+@media (max-width: 768px) {
+
+    header {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;        
         justify-content: space-between !important; 
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 15px 15px !important; 
+        box-sizing: border-box !important;   
+        margin: 0 auto !important;
     }
 
+    
     .nav-links {
-        gap: 8px !important; 
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 6px !important;                
     }
 
     .nav-btn {
-        padding: 6px 12px !important; 
-        font-size: 10px !important; 
+        height: 28px !important;             
+        padding: 0 10px !important;         
+        font-size: 10px !important;          
+        white-space: nowrap !important;      
         border-radius: 30px !important;
-    }
-}
-@media (max-width: 1024px) {
-    header {
-        flex-direction: column;
-        gap: 20px;
+        width: auto !important;
+        min-width: 0 !important;
+        flex: none !important;
     }
 }
 
@@ -103,7 +119,7 @@ header {
     --neon-green: rgb(190, 246, 33);
     --pink: rgb(240, 21, 124);
     --light-btn: rgb(255, 253, 236);
-    --container-width: 1000px; /* Фиксируем как в оригинале */
+    --container-width: 1000px; 
     --container-width: 60%; 
 }
 
